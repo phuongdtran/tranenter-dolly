@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Build Schedule - Costello Builders</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f5f5f3; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #2c2c2a; padding: 32px 16px; }
+  .container { max-width: 680px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #d3d1c7; }
+  .header { background: #ffffff; padding: 28px 32px 20px; border-bottom: 1px solid #d3d1c7; }
+  .header h1 { font-size: 20px; font-weight: 500; color: #2c2c2a; margin-bottom: 4px; }
+  .header p { font-size: 13px; color: #5f5e5a; }
+  .body { padding: 24px 32px; }
+  .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .pill-interior { background: #E6F1FB; color: #0C447C; }
+  .pill-exterior { background: #EAF3DE; color: #27500A; }
+  .pill-dep { background: #FAEEDA; color: #854F0B; }
+  .pill-critical { background: #FCEBEB; color: #A32D2D; }
+  .week-group { margin-bottom: 24px; }
+  .week-label { font-size: 11px; font-weight: 500; color: #888780; text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 8px; border-bottom: 1px solid #d3d1c7; margin-bottom: 12px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 8px 0; vertical-align: top; }
+  td.pill-cell { width: 90px; padding-right: 8px; }
+  tr { border-bottom: 1px solid #f1efe8; }
+  tr:last-child { border-bottom: none; }
+  .item-note { font-size: 12px; color: #888780; font-style: italic; margin-top: 3px; }
+  .dep-chain { font-size: 12px; color: #888780; margin-top: 3px; }
+  .milestone-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f1efe8; }
+  .milestone-row:last-child { border-bottom: none; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .dot-green { background: #639922; }
+  .dot-amber { background: #BA7517; }
+  .dot-blue { background: #185FA5; }
+  .ms-text { font-size: 13px; font-weight: 500; }
+  .ms-sub { font-size: 12px; color: #888780; margin-left: 4px; }
+  .critical-path { background: #f9f8f5; border-radius: 8px; padding: 14px 16px; font-size: 13px; line-height: 2.0; }
+  .cp-red { color: #E24B4A; font-weight: 500; }
+  .cp-amber { color: #BA7517; font-weight: 500; }
+  .cp-green { color: #3B6D11; font-weight: 500; }
+  .cp-arrow { color: #b4b2a9; margin: 0 6px; }
+  .cp-note { color: #888780; font-size: 12px; margin-left: 4px; }
+  .questions ol { margin: 0; padding-left: 20px; line-height: 1.8; }
+  .questions li { margin-bottom: 12px; }
+  .questions li:last-child { margin-bottom: 0; }
+  .divider { border: none; border-top: 1px solid #d3d1c7; margin: 24px 0; }
+  .footer { padding: 16px 32px; border-top: 1px solid #d3d1c7; background: #f9f8f5; font-size: 12px; color: #888780; }
+  @media print {
+    body { background: white; padding: 0; }
+    .container { border: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Home Build Schedule</h1>
+    <p>Costello Builders &mdash; Target move-in July 8</p>
+  </div>
+  <div class="body">
+
+    <!-- Legend -->
+    <div class="legend">
+      <span class="pill pill-interior">interior</span>
+      <span class="pill pill-exterior">exterior</span>
+      <span class="pill pill-dep">⚠ dependency</span>
+      <span class="pill pill-critical">🔴 critical path</span>
+    </div>
+
+    <!-- Week of June 2 -->
+    <div class="week-group">
+      <div class="week-label">Week of June 2 &mdash; This week</div>
+      <table>
+        <tr><td class="pill-cell"><span class="pill pill-interior">interior</span></td><td>Electricians continuing to finish up their work</td></tr>
+        <tr><td class="pill-cell"><span class="pill pill-interior">interior</span></td><td>Costello team getting bathroom accessories, mirrors, and small items taken care of</td></tr>
+        <tr><td class="pill-cell"><span class="pill pill-interior">interior</span></td><td>Painters working on front door replacement panel</td></tr>
+      </table>
+    </div>
+
+    <!-- Week of June 8 -->
+    <div class="week-group">
+      <div class="week-label">Week of June 8 &mdash; Next week</div>
+      <table>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Tile installer (Oscar) &mdash; floors first <span class="pill pill-critical" style="margin-left:4px;">🔴 critical</span>
+            <div class="item-note">Floors on critical path for final inspection.</div>
+          </td>
+        </tr>
+        <tr><td class="pill-cell"><span class="pill pill-interior">interior</span></td><td>Painters &mdash; stain stairs (ideally end of this week, following week if not)</td></tr>
+        <tr><td class="pill-cell"><span class="pill pill-exterior">exterior</span></td><td>Painters &mdash; painting exterior items</td></tr>
+        <tr><td class="pill-cell"><span class="pill pill-exterior">exterior</span></td><td>Decking starts, columns get clad, Eze Breeze measurements taken to order</td></tr>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-exterior">exterior</span></td>
+          <td>Final grade scheduled &mdash; second week of June
+            <div class="item-note">Exact date not confirmed by Carli.</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Week of June 15 -->
+    <div class="week-group">
+      <div class="week-label">Week of June 15</div>
+      <table>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Tile installer &mdash; shower walls <span class="pill pill-critical" style="margin-left:4px;">🔴 critical</span>
+            <div class="dep-chain">→ gates plumber return</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Trimmers return June 13 &mdash; quarter round and trim
+            <div class="item-note">Trim wall paneling on site; timing not confirmed.</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Stain installers &mdash; railing, ideally June 15 <span class="pill pill-dep" style="margin-left:4px;">⚠ depends on stain complete</span>
+            <div class="dep-chain">→ stair stain must finish first</div>
+          </td>
+        </tr>
+        <tr><td class="pill-cell"><span class="pill pill-exterior">exterior</span></td><td>Painters &mdash; exterior items continuing (second of two weeks)</td></tr>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-exterior">exterior</span></td>
+          <td>Paving scheduled &mdash; third week of June
+            <div class="item-note">Exact date not confirmed by Carli.</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Week of June 22 -->
+    <div class="week-group">
+      <div class="week-label">Week of June 22</div>
+      <table>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Tile installer &mdash; backsplash <span class="pill pill-dep" style="margin-left:4px;">⚠ coordinate with electrician</span>
+            <div class="dep-chain">→ electrician must install sink light around same time</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="pill-cell"><span class="pill pill-interior">interior</span></td>
+          <td>Plumbers return ~June 22 &mdash; finish out <span class="pill pill-dep" style="margin-left:4px;">⚠ depends on shower tile</span></td>
+        </tr>
+        <tr><td class="pill-cell"><span class="pill pill-exterior">exterior</span></td><td>Landscape starting June 22 at the latest</td></tr>
+      </table>
+    </div>
+
+    <!-- Milestones -->
+    <div class="week-group">
+      <div class="week-label">Milestones</div>
+      <div class="milestone-row"><div class="dot dot-green"></div><div><span class="ms-text">Target: Final inspection June 25</span><span class="ms-sub">— contingent on tile completion</span></div></div>
+      <div class="milestone-row"><div class="dot dot-amber"></div><div><span class="ms-text">Fallback: Final inspection June 30</span><span class="ms-sub">— if Oscar needs extra days</span></div></div>
+      <div class="milestone-row"><div class="dot dot-blue"></div><div><span class="ms-text">Walkthrough after final inspection</span><span class="ms-sub">— then 4 days for paint touch-ups + construction cleaning</span></div></div>
+      <div class="milestone-row"><div class="dot dot-blue"></div><div><span class="ms-text">Settlement</span><span class="ms-sub">— sometime between final inspection and final cleaning</span></div></div>
+      <div class="milestone-row"><div class="dot dot-green"></div><div><span class="ms-text">Move-in goal: July 8</span></div></div>
+    </div>
+
+    <!-- Critical Path -->
+    <div class="week-group">
+      <div class="week-label">Critical path (tile-driven)</div>
+      <div class="critical-path">
+        <div><span class="cp-red">Tile floors</span><span class="cp-arrow">→</span><span class="cp-red">Tile shower walls</span><span class="cp-arrow">→</span><strong>Plumber finish-out (~June 22)</strong><span class="cp-arrow">→</span><strong>Final inspection (June 25 or 30)</strong><span class="cp-arrow">→</span><strong>Walkthrough + 4 days</strong><span class="cp-arrow">→</span><span class="cp-green">Move-in July 8</span></div>
+        <div style="margin-top:6px;"><span class="cp-amber">Stair stain</span><span class="cp-arrow">→</span><strong>Railing install (~June 15)</strong></div>
+        <div style="margin-top:6px;"><span class="cp-amber">Backsplash tile</span><span class="cp-arrow">→</span><strong>Electrician sink light</strong><span class="cp-note">(coordinate timing)</span></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Questions -->
+    <div class="questions">
+      <div class="week-label">Questions for Carli</div>
+      <ol>
+        <li>What is the realistic best-case and worst-case date for Oscar to finish the shower tile? Since that gates the plumber return and ultimately the June 25 inspection, we want to understand how much buffer we have.</li>
+        <li>Is there a committed date for the stair stain? The railing install on June 15 depends on it, so any slip there directly delays railing.</li>
+        <li>Will the trimmers tackle the wall paneling during the same June 13 visit, or will that require a separate return trip?</li>
+        <li>Has the electrician's schedule been coordinated with Oscar's backsplash work? The light above the sink needs to be installed around the same time, so we want to make sure those aren't blocking each other.</li>
+        <li>What is the lead time on Eze Breeze once measurements are taken next week? We want to make sure it arrives before move-in.</li>
+        <li>If Oscar finishes the shower tile ahead of schedule, is there any flexibility to pull the plumber return earlier than June 22 to build more buffer before the June 25 inspection?</li>
+        <li>On settlement timing — should we plan to be available on short notice between inspection and cleaning, or is there a more defined sequence we can plan around?</li>
+      </ol>
+    </div>
+
+  </div>
+  <div class="footer">Home build schedule summary &mdash; June 2026</div>
+</div>
+</body>
+</html>
